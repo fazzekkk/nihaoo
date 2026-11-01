@@ -185,10 +185,10 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
 
     useEffect(() => {
         if (winner === 'X') {
-            setMessage("Kamu Memenangkan");
+            setMessage("You Won");
             setTimeout(() => onComplete(), 3500); // Increased timeout to wait for staggered animation
         } else if (winner === 'O' || winner === 'draw') {
-            setMessage(winner === 'draw' ? "Seri! Coba lagi yaa ❤️" : "Hampir! Sekali lagi...");
+            setMessage(winner === 'draw' ? "Draw!! Try Again ❤️" : "Almost,Try Again");
             setTimeout(() => {
                 setBoard(Array(9).fill(null));
                 setWinner(null);
@@ -205,7 +205,7 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
             className="flex flex-col items-center justify-center space-y-10 relative z-10"
         >
             <h2 className="text-4xl font-playfair text-white text-center drop-shadow-lg max-w-xs whitespace-pre-line leading-tight">
-                {winner === 'X' ? "Kamu Memenangkan" : message}
+                {winner === 'X' ? "You Won" : message}
             </h2>
             <div className="grid grid-cols-3 gap-3 p-4 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
                 {board.map((square, i) => (
